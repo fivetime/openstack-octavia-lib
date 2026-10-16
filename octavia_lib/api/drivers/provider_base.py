@@ -113,6 +113,13 @@ class ProviderDriver():
     def loadbalancer_failover_with_flavor(self, loadbalancer_id, flavor_id):
         """Performs a fail over of a load balancer with a new flavor.
 
+        Octavia keeps the load balancer's current flavor_id until the driver
+        reports the resize complete: with the load balancer's ``ACTIVE``
+        provisioning status, the driver passes ``flavor_id`` in the same
+        ``loadbalancers`` entry of update_loadbalancer_status(). A resize
+        that fails is reported as ``ERROR`` without ``flavor_id``, and the
+        load balancer keeps its old flavor.
+
         :param loadbalancer_id: ID of the load balancer to failover.
         :type loadbalancer_id: string
         :param flavor_id: ID of the flavor used to rebuild the load balancer.

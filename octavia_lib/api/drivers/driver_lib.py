@@ -116,6 +116,10 @@ class DriverLibrary():
             iod (string): ID for the object.
             provisioning_status (string): Provisioning status for the object.
             operating_status (string): Operating status for the object.
+            flavor_id (string): Load balancers only, optional. The flavor a
+            resize requested through loadbalancer_failover_with_flavor()
+            completed with; sent together with an ``ACTIVE``
+            provisioning_status.
         :type status: dict
         :raises: UpdateStatusError
         :returns: None

@@ -38,6 +38,7 @@ OBJECT = 'object'
 
 # ID fields
 ID = 'id'
+FLAVOR_ID = 'flavor_id'
 
 # Octavia statistics fields
 ACTIVE_CONNECTIONS = 'active_connections'

@@ -1,0 +1,7 @@
+---
+features:
+  - |
+    Documented how a provider driver completes a load balancer resize
+    requested through ``loadbalancer_failover_with_flavor``: it reports
+    ``flavor_id`` with the load balancer's ``ACTIVE`` provisioning status in
+    ``update_loadbalancer_status``. Added the ``FLAVOR_ID`` constant for it.
